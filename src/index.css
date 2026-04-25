@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #3b82f6;
+  --color-neon-blue: #00f2ff;
+  --color-neon-pink: #ff00ea;
+  --color-neon-yellow: #fff200;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply antialiased selection:bg-neon-pink/30;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* 3D Anime Shadow */
+  .anime-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  }
+  .dark .anime-shadow {
+    box-shadow: 4px 4px 0px 0px #fff;
+  }
+
+  .anime-shadow-blue {
+    box-shadow: 4px 4px 0px 0px #3b82f6;
+  }
+
+  .anime-shadow-pink {
+    box-shadow: 4px 4px 0px 0px #ff00ea;
+  }
+  
+  /* Glassmorphism */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  /* Manga Title skew */
+  .manga-title {
+    transform: skew(-12deg);
+  }
+}
+
+/* Rounded corners */
+.rounded-android {
+  border-radius: 28px;
+}
+
